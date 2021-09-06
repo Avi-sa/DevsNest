@@ -1,30 +1,34 @@
-Install Redis on Ubuntu
+# Install Redis on Ubuntu
 
-To install Redis on Ubuntu, go to the terminal and type the following commands −
-
+`To install Redis on Ubuntu, go to the terminal and type the following commands −`
+```
 $ sudo apt-get update 
 $ sudo apt-get install redis-server
-
-This will install Redis on your machine.
-
-Start Redis
+```
+`This will install Redis on your machine.`<br>
+``
+`Start Redis`
+```
 $ redis-server
-
-Check If Redis is Working
+```
+`Check If Redis is Working`
+```
 $ redis-cli 
+```
 
-
+**using key value pair**
+```
 
 127.0.0.1:6379> SET name "Avi" 
-OK
+OK 
 127.0.0.1:6379> GET name 
-"Avi"
+"Avi" 
 127.0.0.1:6379> EXISTS name 
-1
-127.0.0.1:6379> KEYS *
-1) name
+1  
+127.0.0.1:6379> KEYS * 
+1) name 
 127.0.0.1:6379> DEL name 
-(integer) 1
+(integer) 1 
 127.0.0.1:6379> EXISTS name 
 0
 127.0.0.1:6379> FLUSHALL
@@ -38,8 +42,10 @@ OK
 127.0.0.1:6379> ttl name
 (integer) -1
 
+```
 
-
+**List In Redis**
+```
 127.0.0.1:6379> lpush list redis 
 (integer) 1 
 127.0.0.1:6379> lpush list mongodb 
@@ -51,8 +57,9 @@ OK
 1) "rabitmq" 
 2) "mongodb" 
 3) "redis"
-
-
+```
+**SET In Redis**
+```
 127.0.0.1:6379> sadd sets redis
 (integer) 1 
 127.0.0.1:6379> sadd sets mongodb 
@@ -67,8 +74,10 @@ OK
 2) "mongodb" 
 3) "redis" 
 
+```
+**JSON in JSON in Redis**
 
-
+```
 127.0.0.1:6379> HSET person name Avi
 (integer) 1
 127.0.0.1:6379> HSET person name
@@ -94,11 +103,12 @@ OK
 127.0.0.1:6379> HEXISTS person name
 (integer) 1
 
+```
+# POSTGRESQL
 
-`**`POSTGRESQL`**&#07;*`
+**## Setup 🔨**
 
-Setup 🔨
+*Follow* this [link](https://kontext.tech/column/sql-databases/616/install-postgresql-on-wsl) blog to setup postgres on wsl
 
-Follow this [a link](https://kontext.tech/column/sql-databases/616/install-postgresql-on-wsl)blog to setup postgres on wsl
-To start postgres server - sudo service postgresql start
-enter postgres prompt - sudo -u postgres psql
+👉To start postgres server - sudo service postgresql start<br>
+👉enter postgres prompt - sudo -u postgres psql

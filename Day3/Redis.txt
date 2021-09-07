@@ -40,3 +40,32 @@ For Object/Hash
 - HGETALL key
 - HDEL key field
 - HEXISTS key field
+
+
+
+PSUBSCRIBE 
+
+PSUBSCRIBE startword -> 
+	SUBSCRIBES ALL THE CHANELS WITH THE START NAME;
+
+Create stream in Redis:--
+XADD stream val name value
+
+Create stream with random key--
+XADD mystream * name devs
+
+
+
+limiting the messages:
+XADD mystream MAXLEN 10000 * name devs;
+
+
+XREAD COUNT 2000 STREAMS mystream 0;
+
+
+if data doesnt come in limited time:--
+
+XREAD BLOCK 10000 STREAMS mystream 0;
+
+
+
